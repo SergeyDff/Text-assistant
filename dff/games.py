@@ -1,32 +1,27 @@
 import random
 import time
 from datetime import datetime
-# def guess_number(attemp = 0):
-#     random_number = random.randint(1, 10)
-#     my_number = 0
-#     while random_number != my_number:
-#         my_number = input('Отгадай число от 1 до 10, которое я загадал ')
-#         if random_number == my_number:
-#             print('Ты угадал : )')
-#         else:
-#             print('Ты проиграл : (')
-#             if attemp < 9:
-#                 print('Попробуй еще раз')
-#         attemp += 1
-#         if attemp == 9:
-#             print('Слишком много попыток. Число которое я загадал это ', random_number)
-#             break
 
-# # if __name__ == '__main__':
-# #     guess_number()
+#==============================GUESS NUMBER=================================================
+def guess_number(attemp = 0):
+    random_number = random.randint(1, 10)
+    my_number = 0
+    while random_number != my_number:
+        my_number = input('Отгадай число от 1 до 10, которое я загадал ')
+        if random_number == my_number:
+            print('Ты угадал : )')
+        else:
+            print('Ты проиграл : (')
+            if attemp < 9:
+                print('Попробуй еще раз')
+        attemp += 1
+        if attemp == 9:
+            print('Слишком много попыток. Число которое я загадал это ', random_number)
+            break
 
-# start_time = datetime.now()
-# a = []
-# for i in range(100000000):
-#     a.append(i)
-# finish_time = datetime.now()
-# print(finish_time - start_time)
-
+if __name__ == '__main__':
+    guess_number()
+#===============================MATH GAME====================================================
 def math_test():
     mid_result = []
     for i in range(5):
@@ -68,3 +63,21 @@ def math_test():
     print(sum(mid_result)/len)
 if __name__ == '__main__':
     math_test()
+#==================================PICKER===================================================
+def picker():
+  heroes = []
+  print('===КОМАНДЫ===') 
+  print('1. ДОБАВИТЬ ГЕРОЯ')
+  print('2. PICK')
+  command = input('Выберите команду: ') 
+  if command == 1:
+    ap_heroes = input('Напиши героя, которого ты хочешь добавить в список')
+    heroes.append(ap_heroes)
+  if command == 2:
+    pik_rand = random.randint(0, len(heroes) - 1) 
+    print(*heroes)
+    print(*heroes[pik_rand])
+
+if __name__ == '__main__':
+    picker()
+#===========================================================================================
