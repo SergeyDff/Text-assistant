@@ -4,11 +4,14 @@ def game_choice():
     print('Вот что я умею: ')
     print('1. Выбрать героя')
     print('2. Математическая игра')
-    if int(keyboard.read_key()) == 1:
+    print('3. Поиск буквы')
+    command = int(input())
+    if command == 1:
         games.picker()
-    if int(keyboard.read_key()) == 2:
+    if command == 2:
         games.math_test()
-        
+    if command == 3:
+        games.letter_pick()
+
 if __name__ == '__main__':
     game_choice()
-
