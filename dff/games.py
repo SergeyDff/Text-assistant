@@ -65,7 +65,7 @@ def picker():
     
     if __name__ == '__main__':
         picker()
-#=============================================================================================
+#==============================================LETTER PICK=====================================
 def letter_pick():
     letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
     correct_letter = 0
@@ -88,3 +88,25 @@ def letter_pick():
 
 if __name__ == '__main__':
     letter_pick()
+#==============================================NOTES============================================
+def notes():
+    print('===КОМАНДЫ===') 
+    print('1. Добавить заметку')
+    print('2. Удалить заметки')
+    print('3. Прочесть все заметки')
+    command = int(input())
+    if command == 1:
+        f = open('Notes.txt', 'a')
+        f.write(input('Что напишем? '))
+        f.close()
+        notes()
+
+    if command == 2:
+        f = open('Notes.txt', 'w')
+        f.close()
+        notes()
+    if command == 3:
+        f = open('Notes.txt', 'r')
+        print(f.read())
+        f.close()
+        notes()
