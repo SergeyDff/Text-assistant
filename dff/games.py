@@ -2,7 +2,7 @@ import random
 import time
 from datetime import datetime
 import main
-
+import keyboard
     
 #===============================MATH GAME====================================================
 def math_test():
@@ -32,10 +32,10 @@ def math_test():
             print('Правильно!')
         else:
             print('Неправильно!')
+    time.sleep(1)
     print('1. Играть еще')
     print('2. Выйти')
-    next_com = input('Что делать дальше: ')
-    if next_com == 1:
+    if int(keyboard.read_key()) == 1:
        math_test()
     else:
        main.game_choice()
@@ -49,17 +49,17 @@ def picker():
   print('1. ДОБАВИТЬ ГЕРОЯ')
   print('2. PICK')
   print('3. ESC')
-  command = int(input('Выберите команду: '))
-  if command == 1:
+  time.sleep(1)
+  if int(keyboard.read_key()) == 1:
     ap_heroes = input(f'Напиши героя, которого ты хочешь добавить в список \n')
     heroes.append(ap_heroes)
     picker()
-  if command == 2:
+  if int(keyboard.read_key()) == 2:
     pik_rand = random.randint(0, len(heroes) - 1) 
     print(heroes)
     print(heroes[pik_rand])
     picker()
-  if command == 3:
+  if int(keyboard.read_key()) == 3:
     main.game_choice()
     
 if __name__ == '__main__':
