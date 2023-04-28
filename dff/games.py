@@ -47,8 +47,9 @@ heroes = []
 def picker():
     print('===КОМАНДЫ===') 
     print('1. ДОБАВИТЬ ГЕРОЯ')
-    print('2. PICK')
-    print('3. ESC')
+    print('2. Выбрать')
+    print('3. Выйти')
+    print('4. Удалить все')
     time.sleep(1)
     command = int(input())
     if  command == 1:
@@ -56,13 +57,19 @@ def picker():
         heroes.append(ap_heroes)
         picker()
     if command == 2:
-        pik_rand = random.randint(0, len(heroes) - 1) 
-        print(heroes)
-        print(heroes[pik_rand])
-        picker()
+        try:
+            pik_rand = random.randint(0, len(heroes) - 1) 
+            print(heroes)
+            print(heroes[pik_rand])
+            picker()
+        except:
+            print('В списке нет героев')
+            picker()
     if command == 3:
         main.game_choice()
-    
+    if command == 4:
+        heroes.clear()
+        picker()
     if __name__ == '__main__':
         picker()
 #==============================================LETTER PICK=====================================
@@ -94,6 +101,7 @@ def notes():
     print('1. Добавить заметку')
     print('2. Удалить заметки')
     print('3. Прочесть все заметки')
+    print('4. ESC')
     command = int(input())
     if command == 1:
         f = open('Notes.txt', 'a')
@@ -110,3 +118,5 @@ def notes():
         print(f.read())
         f.close()
         notes()
+    if command == 3:
+        main.game_choice()
