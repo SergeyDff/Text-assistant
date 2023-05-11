@@ -36,6 +36,7 @@ def math_test():
     time.sleep(1)
     print('1. Играть еще')
     print('2. Выйти')
+
     if int(input()) == 1:
        math_test()
     else:
@@ -58,7 +59,7 @@ def picker():
     print('4. Удалить все')
     time.sleep(1)
     command = int(input())
-    if  command == 1:
+    if command == 1:
         ap_heroes = input(f'Напиши героя, которого ты'
                           'хочешь добавить в список \n')
         heroes.append(ap_heroes)
