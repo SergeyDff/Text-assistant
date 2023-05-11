@@ -1,5 +1,6 @@
-import games 
-import keyboard
+import games
+
+
 def game_choice():
     print('Вот что я умею: ')
     print('1. Выбрать героя')
@@ -15,6 +16,7 @@ def game_choice():
         games.letter_pick()
     if command == 4:
         games.notes()
+
 
 if __name__ == '__main__':
     game_choice()
