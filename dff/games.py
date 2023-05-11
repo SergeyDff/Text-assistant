@@ -1,10 +1,12 @@
 import random
 import time
-from datetime import datetime
 import main
 import keyboard
-    
-#===============================MATH GAME====================================================
+
+
+#===============================MATH GAME=====================================
+
+
 def math_test():
     for i in range(5):
         first_number = random.randint(1, 10)
@@ -23,7 +25,6 @@ def math_test():
             result = first_number + second_number
             player_result = int(input(f'{first_number} + {second_number} '))
 
-
         if sing_number == 3:
             result = first_number - second_number
             player_result = int(input(f'{first_number} - {second_number} '))
@@ -40,10 +41,15 @@ def math_test():
     else:
        main.game_choice()
 
+
 if __name__ == '__main__':
     math_test()
-#==================================PICKER===================================================
+
+#========PICKER========
+
 heroes = []
+
+
 def picker():
     print('===КОМАНДЫ===') 
     print('1. ДОБАВИТЬ ГЕРОЯ')
@@ -53,7 +59,8 @@ def picker():
     time.sleep(1)
     command = int(input())
     if  command == 1:
-        ap_heroes = input(f'Напиши героя, которого ты хочешь добавить в список \n')
+        ap_heroes = input(f'Напиши героя, которого ты'
+                          'хочешь добавить в список \n')
         heroes.append(ap_heroes)
         picker()
     if command == 2:
@@ -62,7 +69,7 @@ def picker():
             print(heroes)
             print(heroes[pik_rand])
             picker()
-        except:
+        except ValueError:
             print('В списке нет героев')
             picker()
     if command == 3:
@@ -72,7 +79,9 @@ def picker():
         picker()
     if __name__ == '__main__':
         picker()
-#==============================================LETTER PICK=====================================
+#==============================================LETTER PICK===================
+
+
 def letter_pick():
     letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
     correct_letter = 0
@@ -93,9 +102,13 @@ def letter_pick():
     else:
        main.game_choice()
 
+
 if __name__ == '__main__':
     letter_pick()
-#==============================================NOTES============================================
+
+#==============================================NOTES==========================
+
+
 def notes():
     print('===КОМАНДЫ===') 
     print('1. Добавить заметку')
