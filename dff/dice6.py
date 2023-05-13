@@ -1,27 +1,28 @@
-import random
-import time
+def amount():
+    a = '106'
+    b = '15'
+    if len(a) > len(b):
+        for v in range(len(a) - len(b)):
+            b = '0' + b
+
+    if len(a) < len(b):
+        for v in range(len(b) - len(a)):
+            a = '0' + a
+
+    print(a)
+    print(b)
+    result = ''
+    amount_fn_sn = 0
+    for i in range(len(a)):
+        amount_fn_sn = int(a[i]) + int(b[i])
+        if amount_fn_sn >= 10:
+            list_result = list(result)
+            list_result[i-1] = str(int(list_result[i-1]) + amount_fn_sn // 10)
+            list_result.append(str(amount_fn_sn % 10))
+            result = ''.join(list_result)
+        else:
+            result = result + str(amount_fn_sn)
+    print(result)
 
 
-class Warrior:
-    def __init__(self, name):
-        self.name = name
-        self.health = 100
-   
-    def attack(self, enemy):
-        print(f"{self.name} атакует {enemy.name}")
-        enemy.health -= 20
-        print(f"{enemy.name} осталось {enemy.health} здоровья")
-  
-
-warrior_1 = Warrior('Выдра')
-warrior_2 = Warrior('Бобр')
-
-while warrior_1.health > 0 and warrior_2.health > 0:
-    attacker, defender = random.sample([warrior_1, warrior_2], k=2)
-    attacker.attack(defender)
-    time.sleep(0.3)
-
-if warrior_1.health > 0:
-    print(f"{warrior_1.name} побеждает!")
-else:
-    print(f"{warrior_2.name} побеждает!(Бобры лучшие)")
+amount()
