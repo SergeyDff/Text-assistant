@@ -15,7 +15,7 @@ class Car:
         self.distance -= self.speed
 
     def __str__(self) -> str:
-        return f'{self.name} победил'
+        return f'{self.name}'
 
 
 cars = [
@@ -25,12 +25,19 @@ cars = [
     Car('Chevrolet Camaro', random.randint(20, 30))
 ]
 
-while 
+
 flag = True
 while flag:
     for car in cars:
-        car.drive()
-        if car.distance < 0:
+        if random.randint(1, 10) == 1:
+            cars.remove(car)
+        else:
             print(car)
-            flag = False
-            break
+            print('=====================================================')
+            car.drive()
+            time.sleep(1)
+            if car.distance < 0:
+                print(f'{car} финишировалa')
+                print('=====================================================')
+                flag = False
+                break
