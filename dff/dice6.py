@@ -1,34 +1,36 @@
 import random
+import time
 
 
-class Person:
-    def __init__(self, name, room) -> None:
+class Car:
+    def __init__(self, name, speed, distance=500) -> None:
         self.name = name
-        self.room = room
+        self.speed = speed
+        self.distance = distance
 
     def __del__(self):
-        print(f'{self.name} умер в {self.room}')
+        print(f'{self.name} попадает в аварию и покидает гонку')
+
+    def drive(self):
+        self.distance -= self.speed
 
     def __str__(self) -> str:
-        return f'{self.name} находится в {self.room}'
-
-    def __lt__(self, other: 'Person'):
-        return self.room == other.room
+        return f'{self.name} победил'
 
 
-persons = [
-    Person('Валера', 'гостинной'),
-    Person('Сергей', 'спальне'),
-    Person('Санек', 'столовой')
+cars = [
+    Car('BMW M5', random.randint(20, 28)),
+    Car('Lamborghini', random.randint(24, 30)),
+    Car('Honda NSX', random.randint(22, 32)),
+    Car('Chevrolet Camaro', random.randint(20, 30))
 ]
 
-rooms = ['кухне', 'спальне', 'гостинной', 'столовой']
-a = ''
-while len(persons) != 1:
-    for i in range(len(persons) - 1):
-        persons[i].room = random.choice(rooms)
-        print(persons[i])
-        if persons[i].room == a:
-            del persons[i]
-        a = persons[i].room
-        input()
+while 
+flag = True
+while flag:
+    for car in cars:
+        car.drive()
+        if car.distance < 0:
+            print(car)
+            flag = False
+            break
